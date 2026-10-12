@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pesona Nusantara - Portal pariwisata resmi dan paket open trip/private trip terpercaya menjelajahi surga destinasi unggulan Indonesia: Raja Ampat, Labuan Bajo, Bromo, Borobudur, Danau Toba, dan Bali.">
+  <meta name="keywords" content="wisata indonesia, wonderful indonesia, paket tour bromo, sailing komodo, open trip raja ampat, borobudur tour, paket liburan bali, tiket wisata wni wna">
+  <title>Wisata Nusantara — Eksplorasi Destinasi Wisata & Paket Tur Indonesia</title>
+
+  <!-- Google Fonts: Playfair Display (Heading Mewah) & Plus Jakarta Sans (Body Modern) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons (Free CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet Utama -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. TEKS BERJALAN (TOP RUNNING TEXT / TICKER TIPS & TRIK PERJALANAN)
+       ======================================================================== -->
+  <div class="top-ticker-banner" id="topTickerBanner">
+    <div class="container">
+      <div class="ticker-wrapper">
+        <button class="ticker-badge" id="tickerBadgeBtn" title="Klik untuk membuka panduan lengkap">
+          <span class="pulse-dot"></span>
+          <i class="fa-solid fa-lightbulb"></i> Tips & Trik Perjalanan
+        </button>
+        <div class="ticker-track-container">
+          <div class="ticker-track" id="tickerTrack">
+            <!-- Diisi secara dinamis oleh JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       2. NAVIGATION BAR (STICKY GLASSMORPHISM)
+       ======================================================================== -->
+  <header class="main-navbar" id="mainNavbar">
+    <div class="container">
+      <div class="navbar-inner">
+        <!-- Logo Brand -->
+        <a href="index.html" class="brand-logo" title="Pesona Nusantara Portal Wisata">
+          <div class="brand-icon">
+            <i class="fa-solid fa-mountain-sun"></i>
+          </div>
+          <div class="brand-text-wrap">
+            <span class="brand-title">Pesona Nusantara</span>
+            <span class="brand-subtitle">Wonderful Indonesia Portal</span>
+          </div>
+        </a>
+
+        <!-- Menu Tautan Navigasi Aktif -->
+        <nav class="nav-links" id="navLinks">
+          <a href="#beranda" class="nav-item active"><i class="fa-solid fa-house"></i> Beranda</a>
+          <a href="#destinasi" class="nav-item"><i class="fa-solid fa-map-location-dot"></i> Destinasi Top</a>
+          <a href="#kalender-acara" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Kalender Acara</a>
+          <a href="#paket-wisata" class="nav-item"><i class="fa-solid fa-tags"></i> Paket Tur</a>
+          <a href="#booking-section" class="nav-item"><i class="fa-solid fa-clipboard-check"></i> Booking</a>
+          <a href="#testimoni" class="nav-item"><i class="fa-solid fa-star"></i> Testimoni</a>
+        </nav>
+
+        <!-- CTA WhatsApp & Mobile Toggle -->
+        <div class="nav-actions">
+          <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Pesona%20Nusantara,%20saya%20ingin%20konsultasi%20perjalanan%20wisata%20ke%20Indonesia" 
+             target="_blank" 
+             class="btn-wa-header" 
+             title="Konsultasi Cepat WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Konsultasi WA</span>
+          </a>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu Utama">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       3. HERO SLIDER SECTION (BACKGROUND SLIDE FOTO BERKUALITAS TINGGI)
+       Catatan: Apabila gambar di-click maka akan masuk ke Halaman Detail Destinasi
+       ======================================================================== -->
+  <section class="hero-slider-section" id="beranda" aria-label="Hero Carousel Destinasi Unggulan">
+    <div class="slider-progress-bar" id="sliderProgressBar"></div>
+    <div class="slider-container" id="heroSliderContainer">
+      <!-- Diisi secara dinamis oleh JavaScript dengan data foto berkualitas tinggi & event klik detail -->
+    </div>
+
+    <!-- Tombol Panah Navigasi Slider -->
+    <button class="slider-arrow-btn slider-arrow-prev" id="sliderPrevBtn" aria-label="Slide Sebelumnya">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="slider-arrow-btn slider-arrow-next" id="sliderNextBtn" aria-label="Slide Berikutnya">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- Titik Indikator Slider -->
+    <div class="slider-indicator-dots" id="sliderDotsContainer"></div>
+  </section>
+
+  <!-- ========================================================================
+       4. PENCARIAN CEPAT & FILTER KATEGORI DESTINASI
+       ======================================================================== -->
+  <section class="search-filter-section" id="searchFilterSection">
+    <div class="container">
+      <div class="search-box-card">
+        <div class="search-inputs-row">
+          <div class="input-field-group">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="destinasiSearchInput" class="form-control-search" placeholder="Cari destinasi impianmu... (contoh: Bromo, Raja Ampat, Komodo)">
+          </div>
+          <div class="input-field-group">
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="text" id="lokasiSearchInput" class="form-control-search" placeholder="Wilayah (Papua, Jawa Timur, NTT, Bali...)">
+          </div>
+          <a href="#destinasi" class="btn-primary-hero" style="padding: 0.85rem 1.75rem; text-align: center; justify-content: center;">
+            <i class="fa-solid fa-compass"></i> Temukan
+          </a>
+        </div>
+        <div class="category-pills-row">
+          <span style="font-size: 0.85rem; font-weight: 700; color: #64748b; margin-right: 0.4rem;">
+            Kategori Populer:
+          </span>
+          <button class="filter-pill active" data-category="all">
+            <i class="fa-solid fa-globe"></i> Semua Destinasi
+          </button>
+          <button class="filter-pill" data-category="bahari">
+            <i class="fa-solid fa-water"></i> Bahari & Bawah Laut
+          </button>
+          <button class="filter-pill" data-category="gunung">
+            <i class="fa-solid fa-mountain"></i> Gunung & Vulkanik
+          </button>
+          <button class="filter-pill" data-category="budaya">
+            <i class="fa-solid fa-landmark"></i> Warisan Budaya & Sejarah
+          </button>
+          <button class="filter-pill" data-category="alam">
+            <i class="fa-solid fa-tree"></i> Danau & Keasrian Alam
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. DESTINASI POPULER TOP LIST INDONESIA
+       ======================================================================== -->
+  <section class="section-padding" id="destinasi">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Top Tier Destinations</span>
+        <h2 class="section-title">Destinasi Terpopuler Nusantara</h2>
+        <p class="section-desc">
+          Setiap tempat wisata memiliki halaman khusus lengkap dengan sejarah mendalam, harga tiket resmi WNI vs WNA, jam buka, fasilitas, dan peta interaktif.
+        </p>
+      </div>
+
+      <!-- Grid Kartu Destinasi -->
+      <div class="destinasi-grid" id="destinasiGrid">
+        <!-- Render dinamis via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. KALENDER ACARA (EVENT CALENDAR FESTIVAL LOKAL TAHUNAN)
+       ======================================================================== -->
+  <section class="section-padding event-calendar-section" id="kalender-acara">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Jadwal Festival Budaya</span>
+        <h2 class="section-title">Kalender Acara & Tradisi Tahunan</h2>
+        <p class="section-desc">
+          Cocokkan jadwal liburan Anda dengan festival kebudayaan spektakuler, upacara sakral adat, dan parade maritim terbesar di seluruh pelosok Indonesia.
+        </p>
+      </div>
+
+      <!-- Filter Tombol Bulan -->
+      <div class="calendar-filter-bar">
+        <button class="calendar-month-btn active" data-month="all">Semua Acara</button>
+        <button class="calendar-month-btn" data-month="juni">Juni 2027</button>
+        <button class="calendar-month-btn" data-month="agustus">Agustus 2027</button>
+        <button class="calendar-month-btn" data-month="oktober">Oktober 2027</button>
+        <button class="calendar-month-btn" data-month="november">November 2027</button>
+      </div>
+
+      <!-- Grid Kartu Kalender Acara -->
+      <div class="events-grid" id="eventsGrid">
+        <!-- Render dinamis via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. KATALOG PAKET WISATA & HARGA JELAS (INCLUDE & EXCLUDE)
+       ======================================================================== -->
+  <section class="section-padding" id="paket-wisata">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">All-Inclusive Tour Packages</span>
+        <h2 class="section-title">Katalog Paket Wisata & Transparansi Biaya</h2>
+        <p class="section-desc">
+          Rincian paket tur jelas tanpa biaya tersembunyi. Fasilitas termasuk (include) dan tidak termasuk (exclude) dirinci lengkap agar perjalanan Anda tenang dan terencana.
+        </p>
+      </div>
+
+      <!-- Grid Paket Wisata -->
+      <div class="paket-wisata-grid" id="paketWisataGrid">
+        <!-- Render dinamis via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. SISTEM PEMESANAN INTERAKTIF (BOOKING SYSTEM & WHATSAPP CTA)
+       ======================================================================== -->
+  <section class="section-padding booking-section" id="booking-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Sistem Reservasi Praktis</span>
+        <h2 class="section-title">Pesan Paket Wisata Anda Sekarang</h2>
+        <p class="section-desc">
+          Kalkulasi biaya otomatis secara real-time berdasarkan jumlah wisatawan (WNI / WNA) dengan opsi konfirmasi langsung di web atau terhubung instan ke WhatsApp Admin.
+        </p>
+      </div>
+
+      <div class="booking-wrapper">
+        <!-- Kolom Formulir Pemesanan -->
+        <div class="booking-form-card">
+          <form id="bookingForm">
+            <div class="form-group">
+              <label class="form-label" for="bookingPaketSelect">
+                <i class="fa-solid fa-suitcase-rolling"></i> Pilih Paket Wisata / Destinasi
+              </label>
+              <select id="bookingPaketSelect" class="form-control" required>
+                <!-- Opsi paket dimuat via JavaScript -->
+              </select>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label" for="bookingDateInput">
+                  <i class="fa-regular fa-calendar"></i> Tanggal Keberangkatan
+                </label>
+                <input type="date" id="bookingDateInput" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="bookingNama">
+                  <i class="fa-regular fa-user"></i> Nama Lengkap Pemesan
+                </label>
+                <input type="text" id="bookingNama" class="form-control" placeholder="Contoh: Rian Pratama" required>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label" for="bookingPhone">
+                  <i class="fa-brands fa-whatsapp"></i> Nomor WhatsApp Aktif
+                </label>
+                <input type="tel" id="bookingPhone" class="form-control" placeholder="Contoh: 081234567890" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="bookingEmail">
+                  <i class="fa-regular fa-envelope"></i> Alamat Email
+                </label>
+                <input type="email" id="bookingEmail" class="form-control" placeholder="nama@email.com" required>
+              </div>
+            </div>
+
+            <!-- Penghitung Jumlah Peserta (WNI vs WNA vs Anak) -->
+            <div class="form-group">
+              <label class="form-label">
+                <i class="fa-solid fa-users"></i> Rincian Jumlah Peserta Tur
+              </label>
+              <div class="pax-counters-grid">
+                <div class="pax-box">
+                  <div class="pax-info">
+                    <span class="pax-title">🇮🇩 Wisatawan Domestik (WNI)</span>
+                    <span class="pax-desc">KTP / Paspor Indonesia</span>
+                  </div>
+                  <div class="counter-controls">
+                    <button type="button" class="counter-btn" id="paxWNIMinus">-</button>
+                    <span class="counter-val" id="valWNI">2</span>
+                    <button type="button" class="counter-btn" id="paxWNIPlus">+</button>
+                  </div>
+                </div>
+
+                <div class="pax-box">
+                  <div class="pax-info">
+                    <span class="pax-title">🌍 Wisatawan Asing (WNA)</span>
+                    <span class="pax-desc">Paspor Internasional</span>
+                  </div>
+                  <div class="counter-controls">
+                    <button type="button" class="counter-btn" id="paxWNAMinus">-</button>
+                    <span class="counter-val" id="valWNA">0</span>
+                    <button type="button" class="counter-btn" id="paxWNAPlus">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pax-box" style="margin-top: 0.75rem;">
+                <div class="pax-info">
+                  <span class="pax-title">🧒 Anak-Anak (< 10 Tahun)</span>
+                  <span class="pax-desc">Diskon khusus 50% dari harga paket</span>
+                </div>
+                <div class="counter-controls">
+                  <button type="button" class="counter-btn" id="paxAnakMinus">-</button>
+                  <span class="counter-val" id="valAnak">0</span>
+                  <button type="button" class="counter-btn" id="paxAnakPlus">+</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="bookingNotes">
+                <i class="fa-regular fa-comment-dots"></i> Catatan Khusus / Permintaan Khusus
+              </label>
+              <textarea id="bookingNotes" class="form-control" rows="2" placeholder="Contoh: Menu vegetarian, penjemputan khusus di Hotel Tentrem, butuh sewa fins ukuran 42..."></textarea>
+            </div>
+
+            <!-- Tombol Submit di Mobile -->
+            <button type="submit" class="btn-submit-web" style="width: 100%; display: none;" id="btnMobileWebSubmit">
+              Konfirmasi Pemesanan
+            </button>
+          </form>
+        </div>
+
+        <!-- Kolom Ringkasan Perhitungan Harga Live (Dynamic Live Summary) -->
+        <div class="booking-summary-card">
+          <div class="summary-header">
+            <span class="summary-destination-badge" id="summaryDestinasi">Labuan Bajo</span>
+            <h3 class="summary-title" id="summaryPaketTitle">4D3N Sailing Komodo Liveaboard</h3>
+            <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 0.25rem;">
+              Perhitungan tarif otomatis all-inclusive resmi
+            </p>
+          </div>
+
+          <div class="summary-details-list">
+            <div class="summary-row" id="summaryWniRow">
+              <span>Peserta WNI (2 pax)</span>
+              <span>Rp 8.500.000</span>
+            </div>
+            <div class="summary-row" id="summaryWnaRow" style="display: none;">
+              <span>Peserta WNA (0 pax)</span>
+              <span>Rp 0</span>
+            </div>
+            <div class="summary-row" id="summaryAnakRow" style="display: none;">
+              <span>Anak-anak (0 pax)</span>
+              <span>Rp 0</span>
+            </div>
+            <div class="summary-row" style="color: #86efac;">
+              <span><i class="fa-solid fa-shield-halved"></i> Biaya Asuransi & Pajak</span>
+              <span>Sudah Termasuk (Gratis)</span>
+            </div>
+            <div class="summary-row total">
+              <span style="font-weight: 700;">Total Perkiraan Biaya:</span>
+              <span class="summary-total-price" id="summaryTotalPrice">Rp 8.500.000</span>
+            </div>
+          </div>
+
+          <div class="booking-actions">
+            <!-- CTA Tombol WhatsApp Otomatis -->
+            <button type="button" class="btn-submit-wa" id="btnSubmitWA" title="Kirim data langsung ke WhatsApp Admin">
+              <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+              <span>Pesan via WhatsApp Admin</span>
+            </button>
+
+            <!-- CTA Konfirmasi di Web -->
+            <button type="button" class="btn-submit-web" onclick="document.getElementById('bookingForm').dispatchEvent(new Event('submit'))">
+              <i class="fa-solid fa-file-invoice"></i>
+              <span>Simpan & Buat Voucher Web</span>
+            </button>
+          </div>
+
+          <p style="font-size: 0.78rem; color: #94a3b8; text-align: center; margin-top: 1rem;">
+            🔒 Data Anda terlindungi. Pembayaran resmi hanya dilakukan ke rekening perusahaan terverifikasi setelah konfirmasi slot.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       9. TESTIMONI PELANGGAN (SOCIAL PROOF BERGAMBAR)
+       ======================================================================== -->
+  <section class="section-padding" id="testimoni">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Social Proof & Kepercayaan</span>
+        <h2 class="section-title">Cerita & Pengalaman Wisatawan</h2>
+        <p class="section-desc">
+          Dokumentasi nyata dan ulasan jujur dari wisatawan domestik maupun mancanegara yang telah menjelajahi keindahan Indonesia bersama kami.
+        </p>
+      </div>
+
+      <div class="testimoni-grid" id="testimoniGrid">
+        <!-- Render dinamis via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       10. FITUR INTERAKTIF: ULASAN KOMUNITAS & RATING
+       Pengunjung bisa memberikan rating & komentar yang langsung tersimpan di browser
+       ======================================================================== -->
+  <section class="section-padding community-reviews-section" id="ulasan-komunitas">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Fitur Interaktif Pelengkap</span>
+        <h2 class="section-title">Ulasan Komunitas & Rating Wisatawan</h2>
+        <p class="section-desc">
+          Pernah mengunjungi salah satu tempat di atas? Bagikan tips autentik dan berikan rating bintang Anda untuk membantu sesama pelancong.
+        </p>
+      </div>
+
+      <div class="reviews-layout">
+        <!-- Form Kirim Ulasan Baru -->
+        <div class="review-form-card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-dark); margin-bottom: 0.5rem;">
+            Tulis Ulasan Anda
+          </h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+            Beri penilaian bintang dan ceritakan pengalaman menarik Anda saat berkunjung.
+          </p>
+
+          <form id="communityReviewForm">
+            <div class="form-group">
+              <label class="form-label">Pilih Rating Bintang:</label>
+              <div class="star-rating-select" id="reviewStarRating">
+                <i class="fa-solid fa-star star-item active" data-val="1"></i>
+                <i class="fa-solid fa-star star-item active" data-val="2"></i>
+                <i class="fa-solid fa-star star-item active" data-val="3"></i>
+                <i class="fa-solid fa-star star-item active" data-val="4"></i>
+                <i class="fa-solid fa-star star-item active" data-val="5"></i>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reviewerNama">Nama Lengkap / Panggilan:</label>
+              <input type="text" id="reviewerNama" class="form-control" placeholder="Contoh: Satria Mahardika" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reviewDestinasiSelect">Destinasi yang Dikunjungi:</label>
+              <select id="reviewDestinasiSelect" class="form-control" required>
+                <!-- Diisi otomatis oleh JavaScript -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reviewerKomentar">Komentar & Saran Wisata:</label>
+              <textarea id="reviewerKomentar" class="form-control" rows="3" placeholder="Ceritakan spot terbaik, kondisi jalan, atau makanan favorit Anda di sana..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary-hero" style="width: 100%; justify-content: center;">
+              <i class="fa-solid fa-paper-plane"></i> Publikasikan Ulasan
+            </button>
+          </form>
+        </div>
+
+        <!-- Daftar Ulasan Komunitas Terkini -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--primary-dark);">
+              Ulasan Terbaru Komunitas
+            </h3>
+            <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary); background: rgba(4,75,60,0.08); padding: 0.25rem 0.65rem; border-radius: 99px;">
+              Live Update
+            </span>
+          </div>
+          <div class="community-reviews-list" id="communityReviewsList">
+            <!-- Render dinamis via JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       11. FOOTER LENGKAP & INFORMASI RESMI
+       ======================================================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Kolom Info Perusahaan -->
+        <div>
+          <div class="brand-logo" style="margin-bottom: 1.25rem;">
+            <div class="brand-icon">
+              <i class="fa-solid fa-mountain-sun"></i>
+            </div>
+            <div class="brand-text-wrap">
+              <span class="brand-title" style="color: #ffffff;">Pesona Nusantara</span>
+              <span class="brand-subtitle" style="color: var(--accent-gold);">Wonderful Indonesia</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Portal eksplorasi pariwisata Indonesia berstandar tinggi yang didedikasikan untuk mempromosikan keajaiban alam, warisan budaya dunia, dan ekowisata berkelanjutan di kepulauan Nusantara.
+          </p>
+          <div style="display: flex; gap: 0.75rem; font-size: 1.2rem; color: var(--accent-gold);">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+
+        <!-- Kolom Navigasi Cepat -->
+        <div>
+          <h4 class="footer-col-title">Navigasi Halaman</h4>
+          <ul class="footer-links-list">
+            <li><a href="#beranda">Halaman Utama</a></li>
+            <li><a href="#destinasi">Top Destinasi Indonesia</a></li>
+            <li><a href="#kalender-acara">Kalender Festival Tahunan</a></li>
+            <li><a href="#paket-wisata">Katalog Paket Tur</a></li>
+            <li><a href="#booking-section">Formulir Pemesanan</a></li>
+            <li><a href="#testimoni">Ulasan Pelanggan</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom Destinasi Utama -->
+        <div>
+          <h4 class="footer-col-title">Destinasi Unggulan</h4>
+          <ul class="footer-links-list">
+            <li><a href="detail.html?id=raja-ampat">Kepulauan Raja Ampat</a></li>
+            <li><a href="detail.html?id=labuan-bajo">Taman Nasional Komodo</a></li>
+            <li><a href="detail.html?id=gunung-bromo">Gunung Bromo & Semeru</a></li>
+            <li><a href="detail.html?id=candi-borobudur">Candi Borobudur Heritage</a></li>
+            <li><a href="detail.html?id=danau-toba">Danau Toba & Samosir</a></li>
+            <li><a href="detail.html?id=ubud-bali">Ubud & Tegalalang Bali</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom Kontak & Layanan -->
+        <div>
+          <h4 class="footer-col-title">Kontak & Bantuan</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Gedung Sapta Pesona Lt. 8, Jl. Medan Merdeka Barat No. 17, Jakarta Pusat</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>+62 812-3456-7890 (Layanan 24/7)</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-envelope"></i>
+            <span>halo@pesonanusantara.id</span>
+          </div>
+          <div style="margin-top: 1rem; background: rgba(255,255,255,0.06); padding: 0.75rem; border-radius: var(--radius-sm); font-size: 0.78rem;">
+            <i class="fa-solid fa-certificate" style="color: var(--accent-gold);"></i>
+            Bersertifikasi Cleanliness, Health, Safety, and Environment Sustainability (CHSE) Kemenparekraf RI.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Pesona Nusantara Portal. Dibuat dengan cinta untuk pariwisata Indonesia oleh Profesional Teknik Informatika.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       12. MODAL PANDUAN TIPS & TRIK PERJALANAN
+       ======================================================================== -->
+  <div class="modal-overlay" id="tipsModal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">
+          <i class="fa-solid fa-lightbulb" style="color: var(--accent-gold);"></i> Tips & Trik Perjalanan
+        </h3>
+        <button class="modal-close-btn" aria-label="Tutup Modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="tipsModalContent">
+        <!-- Konten diisi dinamis oleh JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       13. MODAL KONFIRMASI BOOKING / SIMULATOR VOUCHER WEB
+       ======================================================================== -->
+  <div class="modal-overlay" id="bookingConfirmModal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">
+          <i class="fa-solid fa-ticket" style="color: var(--primary);"></i> Bukti Reservasi Web
+        </h3>
+        <button class="modal-close-btn" aria-label="Tutup Modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="bookingConfirmContent">
+        <!-- Konten diisi dinamis oleh JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       14. FLOATING ACTION BUTTON WHATSAPP
+       ======================================================================== -->
+  <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Pesona%20Nusantara,%20saya%20ingin%20konsultasi%20destinasi%20dan%20paket%20wisata" 
+     target="_blank" 
+     class="floating-wa-btn" 
+     title="Konsultasi Cepat WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Script Data & Logika Interaktif -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
