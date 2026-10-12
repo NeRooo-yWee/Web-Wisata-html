@@ -82,8 +82,8 @@ Karena dibuat dengan **basis HTML, CSS, dan JavaScript murni**, tidak diperlukan
 ### Opsi 1: Langsung Buka di Browser (Paling Praktis)
 1. Buka File Explorer di komputer Anda.
 2. Masuk ke folder:
-   `C:\Users\Arief Rachman\.gemini\antigravity-ide\scratch\pesona-nusantara\`
-3. Klik ganda pada berkas **`index.html`** untuk langsung membukanya di Google Chrome, Microsoft Edge, atau browser favorit Anda.
+   `C:\Users\.gemini\antigravity-ide\scratch\pesona-nusantara\`
+4. Klik ganda pada berkas **`index.html`** untuk langsung membukanya di Google Chrome, Microsoft Edge, atau browser favorit Anda.
 
 ### Opsi 2: Menggunakan Live Server / Local Web Server
 Jika Anda menggunakan ekstensi seperti **Live Server** di IDE atau server lokal:
